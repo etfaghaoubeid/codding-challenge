@@ -8,7 +8,7 @@ export function usePokimonList() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(startFetching());
-  }, []);
+  }, [dispatch]);
   const { isLoading, pokimons }: PokimonListInitiaState = useSelector(
     (state: RootSate) => state.pokimonList
   );

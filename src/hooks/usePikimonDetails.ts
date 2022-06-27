@@ -8,7 +8,7 @@ export function usePokimonDetails(name: string) {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(startFetchingPokinDetails(name));
-  }, []);
+  }, [dispatch, name]);
   const { isLoading, pokimon }: PokimonDetaislState = useSelector(
     (state: RootSate) => state.pinimonDetails
   );

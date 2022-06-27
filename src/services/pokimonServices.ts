@@ -14,7 +14,6 @@ export async function getPokimonByName(name: string): Promise<Pokimon> {
 async function getPokimonList(): Promise<Pokimon[]> {
   const res = await fetch(`${BASE_URL}`);
   const data = await res.json();
-  console.log("data, ", data);
   const pokimonList: Pokimon[] = [];
   for (const listItem of data.results) {
     const pokimon = await getPokimonByUrl(listItem.url);
